@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="no-js" lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>jQuery.offcanvas Plugin - Lars Graubner</title>
+        <meta name="description" content="This plugin provides an easy way to put content outside of the canvas and reveal it with a click on a button or any desired element.">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <meta name="format-detection" content="telephone=no">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/vendor/prism.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+            <nav class="nav" id="offcanvas">
+                <ul>
+                    <li><a href="#"><i class="fa fa-fw fa-home"></i>Home</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i>About</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-camera"></i>Portfolio</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-briefcase"></i>Projects</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-envelope"></i>Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="content">
+
+                <h1>jQuery.offcanvas</h1>
+                <blockquote><p>"An easy to use offcanvas plugin."</p></blockquote>
+
+                <p>This plugin provides an easy way to put content outside of the canvas and reveal it with a click on a button or any desired element. This is a useful pattern for mobile navigations and more.</p>
+
+                <div class="buttons clearfix">
+                    <button class="js-toggle-offcanvas offcanvas-button button">Demo</button>
+                    <a href="https://github.com/lgraubner/jquery-offcanvas" class="button">Download</a>
+                </div>
+
+                <h2>Dependencies</h2>
+
+                <p>As this is a jQuery plugin it depends on the <a href="http://jquery.com/">jQuery library</a> v1.7+. For smooth animations <a href="https://github.com/julianshapiro/velocity">Velocity.js</a> is used. Both dependencies are required.</p>
+
+                <h2>Usage</h2>
+
+                <p>Initialization:</p>
+
+<pre><code class="language-javascript">$("#navigation").offcanvas({
+    trigger: ".js-toggle-nav",
+    direction: "left"
+});</code></pre>
+
+                <p>Clicks on the trigger element will toggle the offcanvas.</p>
+
+                <p><strong>Do not try to initialize more than one instance of jQuery.offcanvas on one page!</strong></p>
+
+                <h2>Options</h2>
+
+                <p>Options can be set on initialization:</p>
+
+<pre><code class="language-javascript">$("#offcanvas").offcanvas({
+    trigger: ".js-toggle-nav",
+    direction: "left",
+    duration: 300
+});</code></pre>
+
+                <p>You can also set options via data-Attributes, which will overwrite the default value and the value specified on initialization:</p>
+
+<pre><code class="language-html">&#x3C;div id=&#x22;offcanvas&#x22; data-offcanvas-direction=&#x22;right&#x22; data-offcanvas-trigger=&#x22;#button&#x22;&#x3E;
+    ...
+&#x3C;/div&#x3E;</code></pre>
+
+                <h3>classes</h3>
+
+                <p>Type: <code>object</code><br>
+                Default:</p>
+
+<pre><code class="language-javascript">{
+    container: "offcanvas",
+    inner: "offcanvas-inner",
+    open: "offcanvas-open",
+    outer: "offcanvas-outer",
+    overlay: "offcanvas-overlay"
+}</code></pre>
+
+                <p>Classes which will be applied to the elements.</p>
+
+                <h3>container</h3>
+                <p>Type: <code>String</code><br>
+                Default: <code>body</code></p>
+
+                <p>Page container, which will be animated.</p>
+
+                <h3>coverage</h3>
+
+                <p>Type: <code>String</code><br>
+                Default: <code>220px</code></p>
+
+                <p>Width of the offcanvas element which will be revealed.</p>
+
+                <p><strong>Tip:</strong> For better performance avoid using % values.</p>
+
+                <h3>direction</h3>
+
+                <p>Type: <code>String</code><br>
+                Default: <code>left</code></p>
+
+                <p>Direction the offcanvas is revealed from. Possible values are left and right.</p>
+
+                <h3>duration</h3>
+
+                <p>Type: <code>number</code><br>
+                Default: <code>350</code></p>
+
+                <p>Duration of the animation.</p>
+
+                <h3>easing</h3>
+
+                <p>Type: <code>String</code><br>
+                Default: <code>ease-in-out</code></p>
+
+                <p>Easing type for show and hide animations. You can use:</p>
+
+                <ul>
+                    <li><a href="http://easings.net/de">jQuery UI's easings</a></li>
+                    <li>CSS3's named easings: "ease", "ease-in", "ease-out", and "ease-in-out"</li>
+                </ul>
+
+                <p>For more easing options check the <a href="http://julian.com/research/velocity/#easing">Velocity.js documentation</a>.</p>
+
+                <p>Overlay content of the container when offcanvas is visible.</p>
+
+                <h3>trigger</h3>
+
+                <p>Type: <code>String</code><br>
+                Default: <code>.js-toggle-offcanvas</code></p>
+
+                <p>CSS selector for the trigger button.</p>
+
+                <h2>API</h2>
+
+                <p>The offcanvas API offers a couple of methods to control the offcanvas. The methods are called like this:</p>
+
+<pre><code class="language-javascript">$("#offcanvas").offcanvas("show");</code></pre>
+
+                <h3>show</h3>
+
+                <p>Shows the offcanvas.</p>
+
+                <h3>hide</h3>
+
+                <p>Hides the offcanvas.</p>
+
+                <h3>toggle</h3>
+
+                <p>Toggles the offcanvas.</p>
+
+                <h3>destroy</h3>
+
+                <p>Destroys the jQuery.offcanvas instance and reverts all DOM changes.</p>
+
+                <h2>Events</h2>
+
+                <p>jQuery.offcanvas fires several events. Simply listen for them with the jQuery.on function. All events are namespaced with offcanvas.</p>
+
+<pre><code class="language-javascript">$("#offcanvas").on("shown.offcanvas", function() {
+    // do stuff when offcanvas is revealed and animation is finished
+});</code></pre>
+
+                <h3>init</h3>
+
+                <p>Fired once the Plugin is initialized.</p>
+
+                <h3>show</h3>
+
+                <p>Fired when the show method is called.</p>
+
+                <h3>shown</h3>
+
+                <p>Fired when the show animation finished.</p>
+
+                <h3>hide</h3>
+
+                <p>Fired when the hide method is called.</p>
+
+                <h3>hidden</h3>
+
+                <p>Fired when the hide animation finished.</p>
+
+                <h2>Tips</h2>
+
+                <p>To avoid flickering on page load hide the offcanvas element via CSS. It will be automatically shown before the plugin slides it into viewport.</p>
+
+<pre><code class="language-css">#offcanvas {
+    display: none;
+}</code></pre>
+
+                <p>You can grey out your content while the offcanvas element is shown. Simply style the <code>.offcanvas-overlay</code> element. The following example overlays the content with a black transparent overlay. It will be display with a smooth animation.</p>
+
+<pre><code class="language-css">.offcanvas-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+</code></pre>
+            </div>
+
+            <footer class="footer">
+                <p>Made with <i class="fa fa-heart"></i> in Germany</p>
+            </footer>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/vendor/velocity.min.js"></script>
+        <script src="js/vendor/prism.js"></script>
+        <script src="https://raw.githubusercontent.com/lgraubner/jquery-offcanvas/master/dist/jquery.offcanvas.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
