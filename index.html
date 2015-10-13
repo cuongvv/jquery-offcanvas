@@ -48,7 +48,9 @@
 
                 <p>Initialization:</p>
 
-<pre><code class="language-javascript">$("#offcanvas").offcanvas();</code></pre>
+<pre><code class="language-javascript">$("#offcanvas").offcanvas({
+    trigger: ".js-toggle-offcanvas"
+});</code></pre>
 
                 <p>Clicks on the trigger element will toggle the offcanvas.</p>
 
@@ -59,9 +61,9 @@
                 <p>Options can be set on initialization:</p>
 
 <pre><code class="language-javascript">$("#offcanvas").offcanvas({
-    trigger: ".js-toggle-nav",
+    trigger: ".js-toggle-offcanvas",
     direction: "left",
-    duration: 300
+    duration: 400
 });</code></pre>
 
                 <p>You can also set options via data-Attributes, which will overwrite the default value and the value specified on initialization:</p>
