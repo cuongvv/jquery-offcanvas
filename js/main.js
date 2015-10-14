@@ -10,8 +10,10 @@
         },
 
         initOffcanvas: function() {
-            $("#offcanvas").offcanvas({
-                
+            var $el = $("#offcanvas").offcanvas();
+
+            $(".js-toggle-offcanvas").on("click.offcanvas", function() {
+                $el.offcanvas("toggle");
             });
         },
 
