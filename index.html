@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="css/vendor/prism.css">
+        <link rel="stylesheet" href="css/vendor/jquery.offcanvas.min.css">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -39,7 +40,7 @@
 
                 <div class="buttons clearfix">
                     <button class="js-toggle-offcanvas offcanvas-button button">Demo</button>
-                    <a href="https://raw.githubusercontent.com/lgraubner/jquery-offcanvas/master/dist/jquery.offcanvas.min.js" class="button">Download</a>
+                    <a href="https://github.com/lgraubner/jquery-offcanvas/releases/latest" class="button">Download</a>
 
                     <div class="align-center" style="margin-top: 20px;">
                         <a href="https://github.com/lgraubner/jquery-offcanvas">View on GitHub</a>
@@ -51,6 +52,16 @@
                 <p>As this is a jQuery plugin it depends on the <a href="http://jquery.com/">jQuery library</a> v1.7+. For smooth animations <a href="https://github.com/julianshapiro/velocity">Velocity.js</a> is used. Both dependencies are required.</p>
 
                 <h2>Usage</h2>
+
+                <p>Include jQuery, Velocity.js and the plugin before the closing <code>body</code> tag:</p>
+
+<pre><code class="language-html"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="path/to/velocity.min.js"></script>
+<script src="path/to/jquery.offcanvas.min.js"></script></code></pre>
+
+                <p>Include the CSS file:</p>
+
+<pre><code class="language-html"><link rel="stylesheet" href="path/to/jquery.offcanvas.min.css"></code></pre>
 
                 <p>Initialization:</p>
 
@@ -86,6 +97,7 @@ $(".offcanvas-trigger").on("click", function() {
 
 <pre><code class="language-javascript">{
     container: "offcanvas",
+    element: "offcanvas-element",
     inner: "offcanvas-inner",
     open: "offcanvas-open",
     outer: "offcanvas-outer",
@@ -93,6 +105,8 @@ $(".offcanvas-trigger").on("click", function() {
 }</code></pre>
 
                 <p>Classes which will be applied to the elements.</p>
+
+                <p><strong>If you change class names make sure to update them in the CSS file accordingly.</strong></p>
 
                 <h3>container</h3>
                 <p>Type: <code>String</code><br>
@@ -192,12 +206,6 @@ $(".offcanvas-trigger").on("click", function() {
                 <p>Fired when the hide animation finished.</p>
 
                 <h2>Tips</h2>
-
-                <p>To avoid flickering on page load hide the offcanvas element via CSS. It will be automatically shown before the plugin slides it into viewport.</p>
-
-<pre><code class="language-css">#element {
-    display: none;
-}</code></pre>
 
                 <p>You can grey out your content while the offcanvas element is shown. Simply style the <code>.offcanvas-overlay</code> element. The following example overlays the content with a black transparent overlay. It will be display with a smooth animation.</p>
 
