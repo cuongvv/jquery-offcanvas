@@ -67,6 +67,7 @@ input[type="checkbox"] {
     background: #34495e;
     height: 100%;
     box-shadow: inset -13px 0 15px -13px rgba(0,0,0,0.6);
+    display: none;
 }
 
 .nav ul {
