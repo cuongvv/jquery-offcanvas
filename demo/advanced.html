@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Demo - jQuery.offcanvas Plugin - Lars Graubner</title>
+        <title>Advanced Demo - jQuery.offcanvas Plugin - Lars Graubner</title>
         <meta name="description" content="This plugin provides an easy way to put content outside of the canvas and reveal it with a click on a button or any desired element.">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -16,6 +16,11 @@
         <link rel="stylesheet" href="../css/vendor/normalize.css">
         <link rel="stylesheet" href="../css/vendor/jquery.offcanvas.min.css">
         <link rel="stylesheet" href="../css/styles.css">
+        <style>
+            .nav {
+                box-shadow: none;
+            }
+        </style>
     </head>
     <body>
 
@@ -35,19 +40,22 @@
             <div class="content">
 
                 <h1>jQuery.offcanvas</h1>
-                <h2 style="text-align: center;">Basic Demo</h2>
+                <h2 style="text-align: center;">Advanced Demo</h2>
 
-                <p style="text-align: center;">Basic functionality with default options.</p>
+                <p style="text-align: center;">Alternate effect to transition offcanvas into viewport, revealed from the right and colored overlay.</p>
 
                 <div class="buttons clearfix">
                     <button class="js-toggle-offcanvas offcanvas-button button">Toggle</button>
 
-<pre><code class="language-javascript">var $el = $(".nav").offcanvas();
+<pre><code class="language-javascript">var $el = $(".nav").offcanvas({
+    effect: "slide-in-over",
+    overlayColor: "rgba(0, 0, 0, 0.7)",
+    origin: "right"
+});
 
 $(".js-toggle-offcanvas").on("click.offcanvas", function() {
     $el.offcanvas("show");
 });</code></pre>
-
                     <p style="margin: 80px 0 60px;">
                         <a href="https://lgraubner.github.io/jquery-offcanvas/demo/" class="button">Basic</a>
                         <a href="https://lgraubner.github.io/jquery-offcanvas/demo/advanced.html" class="button">Advanced</a>
@@ -75,7 +83,11 @@ $(".js-toggle-offcanvas").on("click.offcanvas", function() {
                 $(".nav").show();
             });
 
-            $el.offcanvas();
+            $el.offcanvas({
+                effect: "slide-in-over",
+                overlayColor: "rgba(0, 0, 0, 0.7)",
+                origin: "right"
+            });
 
             $(".js-toggle-offcanvas").on("click.offcanvas", function() {
                 $el.offcanvas("show");
