@@ -49,7 +49,7 @@
 
 <pre><code class="language-javascript">var $el = $(".nav").offcanvas({
     effect: "slide-in-over",
-    overlayColor: "rgba(0, 0, 0, 0.7)",
+    overlay: true,
     origin: "right"
 });
 
@@ -85,7 +85,7 @@ $(".js-toggle-offcanvas").on("click.offcanvas", function() {
 
             $el.offcanvas({
                 effect: "slide-in-over",
-                overlayColor: "rgba(0, 0, 0, 0.7)",
+                overlay: true,
                 origin: "right"
             });
 
