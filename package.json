@@ -1,0 +1,22 @@
+{
+  "name": "jquery-offcanvas-demo",
+  "version": "1.0.0",
+  "description": "Demo for jquery.offcanvas",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "jquery-offcanvas": "^3.4.1",
+    "velocity-animate": "^1.2.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgraubner/jquery-offcanvas.git"
+  },
+  "author": "Lars Graubner <mail@larsgraubner.de> (http://larsgraubner.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lgraubner/jquery-offcanvas/issues"
+  },
+  "homepage": "https://github.com/lgraubner/jquery-offcanvas#readme",
+  "private": true
+}
