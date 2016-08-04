@@ -4,7 +4,7 @@
   "description": "Demo for jquery.offcanvas",
   "dependencies": {
     "jquery": "^2.1.4",
-    "jquery-offcanvas": "^3.4.2",
+    "jquery-offcanvas": "^3.4.3",
     "velocity-animate": "^1.2.3"
   },
   "devDependencies": {},
